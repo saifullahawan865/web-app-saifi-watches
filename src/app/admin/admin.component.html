@@ -1,0 +1,127 @@
+<div *ngIf="!hasAccess; then login else member"></div>
+
+<ng-template #login>
+  <div class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card shadow-lg p-4 bg-dark text-white rounded">
+          <div class="text-center mb-4">
+            <h1 class="display-6">Login</h1>
+            <p class="small">
+              Please enter sample email/password
+              <br />
+              <strong>Email/Password:</strong> "test&#64;test.com/test123"
+            </p>
+          </div>
+          <form #f="ngForm">
+            <div class="mb-3">
+              <label class="form-label">Email Address</label>
+              <input
+                type="email"
+                class="form-control"
+                ngModel
+                name="email"
+                placeholder="Enter your email"
+                email="ngModel"
+              />
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Password</label>
+              <input
+                type="password"
+                class="form-control"
+                ngModel
+                name="password"
+                #password="ngModel"
+                placeholder="Enter your password"
+              />
+            </div>
+            <button type="submit" class="btn btn-primary btn-block" (click)="onLogin(f.value)">Login</button>
+          </form>
+          <div class="text-center mt-3" style="color:white;">{{message}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #member>
+  <div class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card shadow-lg p-4 bg-dark text-white rounded">
+          <div class="text-center mb-4">
+            <h1 class="display-6">Welcome Back, Admin!</h1>
+            <p>Email: {{user?.email}}</p>
+          </div>
+          <button type="submit" class="btn btn-danger btn-block" (click)="onLogout()">Logout</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <form #f="ngForm" class="bg-light p-5 shadow-lg rounded" (ngSubmit)="onSubmit(f.value)">
+          <h1 class="text-center mb-4">Add a New Product</h1>
+          <div class="form-floating mb-3">
+            <input
+              ngModel
+              name="productName"
+              #PRODUCTNAME="ngModel"
+              type="text"
+              class="form-control"
+              id="floatingInput"
+              placeholder="Product Name"
+              required
+              minlength="2"
+              pattern="^[a-zA-Z]+"
+            />
+            <label for="floatingInput">Product Name</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input
+              ngModel
+              name="productPrice"
+              #PRODUCTPRICE="ngModel"
+              type="text"
+              class="form-control"
+              id="floatingInput1"
+              placeholder="Product Price"
+              required
+            />
+            <label for="floatingInput1">Product Price</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input
+              ngModel
+              name="productDescription"
+              #PRODUCTDESCRIPTION="ngModel"
+              type="text"
+              class="form-control"
+              id="floatingInput2"
+              placeholder="Product Description"
+              required
+              minlength="10"
+              pattern="^[a-zA-Z]+"
+            />
+            <label for="floatingInput2">Product Description</label>
+          </div>
+          <button type="submit" class="btn btn-success btn-block" (click)="onSubmit(f.value)">Add Product</button>
+          <div class="text-center mt-3 text-success">{{added}}</div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="container my-5">
+    <h1 class="text-center mb-4">Orders to Fulfill</h1>
+    <app-orders></app-orders>
+  </div>
+</ng-template>
+
+<div class="my-5">
+  <app-footer></app-footer>
+</div>
+<router-outlet></router-outlet>

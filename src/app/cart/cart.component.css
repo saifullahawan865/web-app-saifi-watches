@@ -1,0 +1,110 @@
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background: #f9f9f9;
+}
+
+/* Card Styles */
+.card {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.card-header {
+    border-bottom: none;
+    padding: 20px;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+/* Table Styles */
+.table {
+    margin-bottom: 0;
+}
+
+.table-hover tbody tr:hover {
+    background: #f1f1f1;
+}
+
+thead th {
+    border-bottom: 2px solid #dee2e6;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+}
+
+tbody td {
+    vertical-align: middle;
+}
+
+/* Media and Product Image */
+.media {
+    align-items: center;
+}
+
+.imgresize {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Buttons */
+.separateButton {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+}
+
+.btn {
+    border-radius: 20px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Quantity Controls */
+.quantity-controls .btn-sm {
+    padding: 0.25rem 0.5rem;
+}
+
+.quantity-controls .form-control {
+    max-width: 60px;
+    padding: 0.3rem;
+    text-align: center;
+}
+
+/* Empty Cart Message */
+.text-secondary {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+/* Empty Space */
+.emptyspace {
+    height: 240px;
+}
+
+/* Footer */
+app-footer {
+    margin-top: 40px;
+    background: #343a40;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+}
+
+app-footer a {
+    color: #ffc107;
+}
+
+app-footer a:hover {
+    text-decoration: underline;
+}

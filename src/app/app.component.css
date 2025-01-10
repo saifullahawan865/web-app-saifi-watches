@@ -1,0 +1,58 @@
+/* Navbar Styles */
+.navbar {
+  background: linear-gradient(45deg, #f8f9fa, #e9ecef);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.mylogo {
+  height: 40px; /* Maintain logo height */
+  margin-right: 10px; /* Space between logo and text */
+}
+
+.navbar-brand span {
+  font-size: 1.5rem; /* Increase font size for brand name */
+  color: #007bff; /* Brand color */
+  font-weight: bold; /* Make brand name bold */
+}
+
+/* Nav Items */
+.navbar-nav .nav-item {
+  margin: 0 10px; /* Spacing between nav items */
+}
+
+.nav-link {
+  font-size: 1rem; /* Font size for nav links */
+  color: #343a40; /* Default link color */
+  transition: color 0.3s ease; /* Smooth color transition */
+}
+
+/* Hover Effects */
+.nav-link:hover {
+  color: #0056b3 !important; /* Darker blue on hover */
+  text-decoration: underline; /* Underline on hover */
+}
+
+/* Button Styles */
+.btn-outline-primary {
+  border-color: #007bff; /* Primary button border color */
+  color: #007bff; /* Button text color */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+.btn-outline-primary:hover {
+  background-color: #007bff; /* Background color on hover */
+  color: white; /* Text color on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar-nav {
+      flex-direction: column; /* Stack nav items on smaller screens */
+      margin-top: 10px; /* Margin above stacked items */
+  }
+}
